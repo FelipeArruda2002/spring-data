@@ -20,6 +20,9 @@ public class User {
     private String nome;
     private String sobrenome;
     private String email;
+    @ManyToOne
+    @JoinColumn(name = "endereco_id_endereco")
+    private Endereco endereco;
 
     public User() {
     }
@@ -54,5 +57,13 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 }
